@@ -4,7 +4,8 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern><![CDATA[date:%d{yyyy-MM-dd HH:mm:ss}\tthread:%thread\tX-Track:%X{X-Track}\tlevel:%-5level\tlogger:%-48logger{48}\tmessage:%replace(%msg){'(\r\n|\r|\n)','$1  '}%n%replace(%replace(%xEx){'(\r\n|\r|\n)','$1  '}){'  $',''}%nopex]]></pattern>
+            <pattern>
+                <![CDATA[date:%d{yyyy-MM-dd HH:mm:ss}\tthread:%thread\tX-Track:%X{X-Track}\tlevel:%-5level\tlogger:%-48logger{48}\tmessage:%replace(%msg){'(\r\n|\r|\n)','$1  '}%n%replace(%replace(%xEx){'(\r\n|\r|\n)','$1  '}){'  $',''}%nopex]]></pattern>
         </encoder>
     </appender>
 
@@ -16,7 +17,8 @@
         </rollingPolicy>
         <encoder>
             <charset>UTF-8</charset>
-            <pattern><![CDATA[date:%d{yyyy-MM-dd HH:mm:ss}\tthread:%thread\tX-Track:%X{X-Track}\tlevel:%-5level\tlogger:%-48logger{48}\tmessage:%replace(%msg){'(\r\n|\r|\n)','$1  '}%n%replace(%replace(%xEx){'(\r\n|\r|\n)','$1  '}){'  $',''}%nopex]]></pattern>
+            <pattern>
+                <![CDATA[date:%d{yyyy-MM-dd HH:mm:ss}\tthread:%thread\tX-Track:%X{X-Track}\tlevel:%-5level\tlogger:%-48logger{48}\tmessage:%replace(%msg){'(\r\n|\r|\n)','$1  '}%n%replace(%replace(%xEx){'(\r\n|\r|\n)','$1  '}){'  $',''}%nopex]]></pattern>
         </encoder>
     </appender>
 
@@ -28,59 +30,60 @@
         </rollingPolicy>
         <encoder>
             <charset>UTF-8</charset>
-            <pattern><![CDATA[date:%d{yyyy-MM-dd HH:mm:ss}\tX-Track:%X{X-Track}\tlevel:%-5level\tmessage:%replace(%msg){'(\r\n|\r|\n)','$1  '}%n%replace(%replace(%xEx){'(\r\n|\r|\n)','$1  '}){'  $',''}%nopex]]></pattern>
+            <pattern>
+                <![CDATA[date:%d{yyyy-MM-dd HH:mm:ss}\tX-Track:%X{X-Track}\tlevel:%-5level\tmessage:%replace(%msg){'(\r\n|\r|\n)','$1  '}%n%replace(%replace(%xEx){'(\r\n|\r|\n)','$1  '}){'  $',''}%nopex]]></pattern>
         </encoder>
     </appender>
 
     <!-- Application Loggers -->
     <logger name="com.example.todo">
-        <level value="debug" />
+        <level value="debug"/>
     </logger>
 
     <logger name="com.example.todo.domain.repository">
-        <level value="trace" />
+        <level value="trace"/>
     </logger>
 
     <!-- TERASOLUNA -->
     <logger name="org.terasoluna.gfw">
-        <level value="info" />
+        <level value="info"/>
     </logger>
     <logger name="org.terasoluna.gfw.web.logging.TraceLoggingInterceptor">
-        <level value="trace" />
+        <level value="trace"/>
     </logger>
     <logger name="org.terasoluna.gfw.common.exception.ExceptionLogger">
-        <level value="info" />
+        <level value="info"/>
     </logger>
     <logger name="org.terasoluna.gfw.common.exception.ExceptionLogger.Monitoring" additivity="false">
-        <level value="error" />
-        <appender-ref ref="MONITORING_LOG_FILE" />
+        <level value="error"/>
+        <appender-ref ref="MONITORING_LOG_FILE"/>
     </logger>
 
     <!-- 3rdparty Loggers -->
     <logger name="org.springframework">
-        <level value="warn" />
+        <level value="warn"/>
     </logger>
 
     <logger name="org.springframework.web.servlet">
-        <level value="info" />
+        <level value="info"/>
     </logger>
 
     <logger name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
-        <level value="trace" />
+        <level value="trace"/>
     </logger>
 
     <logger name="org.springframework.jdbc.core.JdbcTemplate">
-        <level value="trace" />
+        <level value="trace"/>
     </logger>
 
     <logger name="org.hibernate.SQL" additivity="true">
-        <level value="debug" />
+        <level value="debug"/>
     </logger>
     <logger name="org.hibernate.type">
-        <level value="trace" />
+        <level value="trace"/>
     </logger>
     <logger name="org.hibernate.engine.transaction">
-        <level value="debug" />
+        <level value="debug"/>
     </logger>
     <!--  REMOVE THIS LINE IF YOU USE MyBatis3
     <logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -89,8 +92,8 @@
           REMOVE THIS LINE IF YOU USE MyBatis3  -->
 
     <root level="warn">
-        <appender-ref ref="STDOUT" />
-        <appender-ref ref="APPLICATION_LOG_FILE" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="APPLICATION_LOG_FILE"/>
     </root>
 
 </configuration>
